@@ -10,8 +10,6 @@
        E.g "node": true, "browser": true */
   },
   "rules": {
-    /* -------------- Copied from base javascript linting config ------------ */
-
     /* Warns on TODO/FIXMEs */
     "no-warning-comments": 1,
 
@@ -107,7 +105,5 @@
 
     /* Enforces 1 true brace style */
     "brace-style": [2, "stroustrop"]
-
-    /* ---------------------------------------------------------------------- */
   }
 }
