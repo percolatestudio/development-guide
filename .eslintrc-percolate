@@ -6,9 +6,8 @@
 
 {
   "env": {
-    /* Allows global vars in a node environment to pass and enables certain rules */
-    "node": true,
-    "browser": true
+    /* Allows global vars in a node environment to pass and enables certain rules
+       E.g "node": true, "browser": true */
   },
   "rules": {
     /* -------------- Copied from base javascript linting config ------------ */
