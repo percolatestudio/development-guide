@@ -9,9 +9,6 @@
 {
   "extends": ".eslintrc-percolate",
   "env": {
-    /* Allows global vars in a node environment to pass and enables certain rules */
-    "node": true,
-    "browser": true
   },
   "ecmaFeatures": {
     /* Allows handling of jsx syntax */
