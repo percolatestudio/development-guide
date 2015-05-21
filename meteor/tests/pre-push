@@ -1,0 +1,22 @@
+#!/bin/sh
+# Hook that prevents pushing to master or devel if tests fail
+
+# So GitHub for mac can push
+PATH="/usr/local/bin:$PATH"
+
+# read push parameters from STDIN
+read local_ref local_sha remote_ref remote_sha
+
+# debugging
+# echo "local_ref: $local_ref remote_ref: $remote_ref"
+
+# run the tests if we're pushing to devel/master or release branches
+if [[ "$remote_ref" == refs/heads/devel ]] \
+    || [[ "$remote_ref" == refs/heads/master ]] \
+    || [[ "$remote_ref" =~ ^refs/heads/release-week.* ]]; then
+  echo "Running tests first..."
+  git_hook_dir="$( cd "$(dirname "$0")" ; pwd -P )"
+  exec $git_hook_dir/../../tests/run-all.sh
+else
+  exit 0
+fi
